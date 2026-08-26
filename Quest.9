@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main () {
+    int matriz[3][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+    
+    printf("Elementos da matriz:\n");
+    for(int l=0; l<3; l++) {
+        for(int c=0; c<4; c++) {
+            printf("%d", *(*(matriz + l) + c));
+        }
+        printf("\n");
+    }
+    printf("\nSoma das linhas:\n");
+    for(int l=0; l<3; l++) {
+        int somaLinha=0;
+        for(int c=0; c<4; c++) {
+            somaLinha+= *(*(matriz + l)+ c);
+        }
+        printf("Linha %d: %d\n, l, somaLinha");
+    }
+    
+    int maior=**matriz;
+    int linMaior=0, colMaior=0;
+    
+    for(int l=0; l<3; l++){
+        for(int c=0; c<4; c++){
+            int valorAtual=*(*(matriz + l) + c);
+            if(valorAtual > maior){
+                maior=valorAtual;
+                linMaior=l;
+                colMaior=c;
+            }
+        }
+    }
+    
+    printf("\nMaior elementos: %d(Linha: %d, Coluna: %d)\n", maior, linMaior, colMaior);
+    
+    return 0;
+}
