@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main () {
+    int x= 20;
+    int *p= &x;
+
+    printf("Valor da variavel: %d\n", x);
+    printf("Endereço do ponteiro: %p\n", &x);
+    printf("Conteudo do ponteiro: %p\n", p);
+    printf("Valor apontado pelo ponteiro: %d\n", *p);
+
+    *p= 35;
+    printf("Novo valor da variavel: %d\n", x);
+
+    return 0;
+}
