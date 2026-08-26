@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main () {
+    int vetor[]= {1, 2, 3};
+    int *p1;
+    int **p2;
+    int ***p3;
+    
+    p1=vetor;
+    p2=&p1;
+    p3=&p2;
+    
+    printf("a) %d %d %d\n", *p1, **p2, ***p3);
+    
+    ***p3=10;
+    
+    *p2=*p2 + 1;
+    
+    ***p3=20;
+    
+    p1=vetor;
+    
+    printf("Resultado esperado:n");
+    for(int i=0; i<3; i++){
+        printf("%d", *(p1+i));
+    }
+    printf("\n");
+    
+    return 0;
+}
