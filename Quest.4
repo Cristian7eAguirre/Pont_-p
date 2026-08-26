@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main () {
+    int numeros[] = {4, 8, 12, 16, 20, 24};
+    int *p = numeros;
+    int soma = 0;
+    
+    printf("Elementos do vetor:\n");
+    for(int i=0; i<6; i++){
+        printf("%d", *p);
+        soma+= *p;
+        p++;
+    }
+    printf("\nSoma de todos elementos: %d\n", soma);
+    
+    return 0;
+}
